@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(uart LANGUAGES C ASM)
+project(xmc4800_cmake LANGUAGES C ASM)
 
 set(TOOLCHAIN_PREFIX $ENV{TOOLCHAIN_PREFIX})
 set(xmclib_dir $ENV{XMCLIB_DIR})
@@ -42,10 +42,9 @@ xmc_add_library(newlib
 
 add_executable(main
     main.c
-    # retarget_io.c
-    # ring_buffer.c
     serial.c
 )
+
 xmc4800_target(main)
 target_link_libraries(main
     xmc_uart
