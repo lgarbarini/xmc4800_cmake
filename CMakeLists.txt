@@ -13,6 +13,8 @@ include(xmc4800)
 
 add_definitions(-DXMC4800_F100x2048)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 xmc_add_library(xmc4_scu
     ${xmclib_dir}/XMCLib/src/xmc4_scu.c
 )
